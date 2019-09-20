@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faEuroSign } from '@fortawesome/free-solid-svg-icons';
+import { faEuroSign, faHome, faInfoCircle, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,9 @@ import { faEuroSign } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'moneyxchange';
+  title = 'MoneyXChange';
   faEuroSign = faEuroSign;
+  faHome = faHome;
+  faInfoCircle = faInfoCircle;
+  faEnvelope = faEnvelope;
 }
