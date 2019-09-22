@@ -7,7 +7,7 @@ import { faEuroSign, faHome, faInfoCircle, faEnvelope } from '@fortawesome/free-
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'MoneyXChange';
+  title = 'MoneyXchange';
   faEuroSign = faEuroSign;
   faHome = faHome;
   faInfoCircle = faInfoCircle;

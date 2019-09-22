@@ -1,17 +1,20 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <form [formGroup]="registerForm" class="text-center" (ngSubmit)="onSubmit()">
+      <form [formGroup]="conversionForm" class="text-center" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="col-12 col-md-6">
             <label class="sr-only" for="from">EUR</label>
-            <input type="text" id="from" formControlName="from" class="form-control" placeholder="EUR">
+            <input type="text" id="from" formControlName="from" currencyMask [options]="{ align: 'center', prefix: '€ ', precision: 4 }" class="form-control mb-2" placeholder="EUR" [ngClass]="{ 'is-invalid': submitted && f.from.errors }">
+            <div *ngIf="submitted && f.from.errors" class="invalid-feedback">
+                <div *ngIf="f.from.errors.required">This field is required</div>
+            </div>
           </div>
           <div class="col-12 col-md-6">
             <label class="sr-only" for="to">USD</label>
-            <input type="text" id="to" class="form-control" placeholder="USD" disabled>
+              <input type="text" id="to" formControlName="to" currencyMask  [options]="{ align: 'center', suffix: ' USD', precision: 4 }" class="form-control mb-2" placeholder="USD" [disabled]>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg mt-4">Calculate</button>
+        <button type="submit" class="btn btn-primary btn-lg mt-4"><fa-icon [icon]="faSpinner" [spin]="true" *ngIf="submitting"></fa-icon> Calculate</button>
       </form>
     </div>
   </div>
